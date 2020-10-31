@@ -1,0 +1,15 @@
+name: two quotes by epictetus:
+isDialogue: false:
+level: C1-C2:
+icon: history:
+topic: stoicism:
+note: a dose of stoicism:
+keywords: grapes, figs, blossom, suddenly, ripen, accuse, misfortunes, education:
+raw:
+Nothing great is created suddenly, any more than a bunch of grapes or a fig.
+If you tell me that you desire a fig, I answer you that there must be time.
+Let it first blossom, then bear fruit, then ripen.
+To accuse others for one's own misfortunes is a sign of want of education.
+To accuse oneself shows that one's education has begun.
+To accuse neither oneself nor others shows that one's education is complete.:
+

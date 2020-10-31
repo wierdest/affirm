@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.wierdest.affirmative.utilities.MotionDrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:id="@+id/navViewDrawer"
+    android:background="@color/colorPrimary"
+    app:layoutDescription="@xml/nav_view_scene">
+
+    <LinearLayout
+        android:id="@+id/navViewHeaderLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/navViewImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/navViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_view_title"
+            android:textAppearance="@style/NavViewTitle" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/navViewSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_view_subtitle"
+            android:textAppearance="@style/NavViewSubtitle" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/navViewImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/navViewHeaderLayout"
+        app:layout_constraintTop_toTopOf="@id/navViewHeaderLayout"
+        app:srcCompat="@drawable/self_affirmation_24px"
+        app:tint="@color/colorAccent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        style="@style/Widget.Custom.NavigationView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/navViewHeaderLayout"
+        app:layout_constraintStart_toStartOf="@id/navViewHeaderLayout"
+        app:menu="@menu/nav_view_menu" />
+
+</me.wierdest.affirmative.utilities.MotionDrawerLayout>

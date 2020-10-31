@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="item"
+            type="me.wierdest.affirmative.database.SnippetWithSnips" />
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        app:layoutDescription="@xml/result_fragment_scene">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/snippetLayout"
+            app:layoutDescription="@xml/result_header_scene"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/emoji_events_24px" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                android:text="RESULTS"
+                android:textColor="#FFF"
+                android:textSize="32dp" />
+
+            <TextView
+                android:id="@+id/sublabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GRADE"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:fontFamily="cursive" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintTop_toBottomOf="@+id/snippetLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/accuracyLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Accuracy"
+                    app:icon="@drawable/military_tech_24px"
+                    app:layout_constraintBottom_toTopOf="@id/accuracy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/accuracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    app:layout_constraintBottom_toTopOf="@id/wpmLabel"
+                    app:layout_constraintEnd_toEndOf="@id/accuracyLabel"
+                    app:layout_constraintStart_toStartOf="@id/accuracyLabel"
+                    app:layout_constraintTop_toBottomOf="@id/accuracyLabel" />
+
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/wpmLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="WPM"
+                    app:icon="@drawable/whatshot_24px"
+                    app:layout_constraintBottom_toTopOf="@id/wpm"
+                    app:layout_constraintEnd_toEndOf="@id/accuracyLabel"
+                    app:layout_constraintStart_toStartOf="@id/accuracyLabel"
+                    app:layout_constraintTop_toBottomOf="@id/accuracy" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wpm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="120"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    app:layout_constraintBottom_toTopOf="@id/enthusiasmLabel"
+                    app:layout_constraintEnd_toEndOf="@id/wpmLabel"
+                    app:layout_constraintStart_toStartOf="@id/wpmLabel"
+                    app:layout_constraintTop_toBottomOf="@id/wpmLabel" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/enthusiasmLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Enthusiasm"
+                    app:icon="@drawable/campaign_24px"
+                    app:layout_constraintBottom_toTopOf="@id/enthusiasm"
+                    app:layout_constraintEnd_toEndOf="@id/accuracyLabel"
+                    app:layout_constraintStart_toStartOf="@id/accuracyLabel"
+                    app:layout_constraintTop_toBottomOf="@id/wpm" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/enthusiasm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    app:layout_constraintEnd_toEndOf="@id/enthusiasmLabel"
+                    app:layout_constraintStart_toStartOf="@id/enthusiasmLabel"
+                    app:layout_constraintTop_toBottomOf="@id/enthusiasmLabel" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/confusedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Confused words"
+                    app:icon="@drawable/healing_24px"
+                    app:layout_constraintEnd_toEndOf="@id/accuracyLabel"
+                    app:layout_constraintStart_toStartOf="@id/accuracyLabel"
+                    app:layout_constraintTop_toBottomOf="@id/enthusiasm" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/confused"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Confused Word vs Expected Word \n Confused Word vs Expected \n Confused Word vs Expected"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintEnd_toEndOf="@id/confusedLabel"
+                    app:layout_constraintStart_toStartOf="@id/confusedLabel"
+                    app:layout_constraintTop_toBottomOf="@id/confusedLabel" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/leaderboard_24px"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myViewModel"
+            type="me.wierdest.affirmative.database.MyViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/title_snippet_scene"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@color/colorPrimary"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/public_24px"
+            app:tint="@color/colorAccent" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            app:icon="@drawable/flag_24px" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            app:icon="@drawable/description_24px" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/keywords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keywords"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            app:icon="@drawable/vpn_key_24px" />
+
+        <TextSwitcher
+            android:id="@+id/titleSwitcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/keywords" />
+
+
+        <SeekBar
+            android:id="@+id/levelSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:theme="@style/Widget.MaterialComponents.Button"
+            app:layout_constraintBottom_toBottomOf="@id/startButton"
+            app:layout_constraintTop_toBottomOf="@id/titleSwitcher"
+            tools:visibility="visible" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/self_affirm_24px"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:srcCompat="@drawable/settings_24px" />
+
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

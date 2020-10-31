@@ -1,0 +1,14 @@
+name: to be here very basic statements:
+isDialogue: false:
+level: A1-A2:
+icon: world:
+topic: verb to be and mindfulness:
+note: Thanks for being here!:
+keywords: here, right, my, me, heart, mind, so, am, I:
+raw:
+I am here.
+Here I am.
+I'm right here and here I am.
+My heart is here.
+My mind is here.
+They are here and so am I.:

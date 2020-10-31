@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/nav_view_menu_title_01">
+
+        <menu>
+
+            <group android:checkableBehavior="single" android:id="@+id/basicNav">
+
+                <item
+                    android:title="@string/nav_view_menu_feats"
+                    android:id="@id/featsFragment"
+                    android:icon="@drawable/emoji_events_24px"/>
+
+                <item
+                    android:title="@string/nav_view_menu_settings"
+                    android:id="@id/settingsFragment"
+                    android:icon="@drawable/settings_24px"/>
+
+                <item
+                    android:id="@+id/menu_none"
+                    android:title=""
+                    android:visible="false"/>
+
+            </group>
+
+        </menu>
+
+
+
+    </item>
+
+    <item android:title="@string/nav_view_menu_title_02">
+
+        <menu>
+            <group android:checkableBehavior="single" android:id="@+id/extraNav">
+
+<!--                <item-->
+<!--                    android:title="@string/nav_view_menu_about"-->
+<!--                    android:id="@id/aboutFragment"-->
+<!--                    android:icon="@drawable/face_24px" />-->
+
+                <item
+                    android:title="@string/nav_view_menu_privacy"
+                    android:icon="@drawable/policy_24px"
+                    android:id="@+id/nav_privacy"/>
+
+            </group>
+
+            <item
+                android:title="@string/nav_view_menu_rate"
+                android:icon="@drawable/star_rate_24px"
+                android:id="@+id/nav_rate"/>
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/share_24px"
+                android:title="@string/nav_view_menu_share" />
+
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/send_24px"
+                android:title="@string/nav_view_menu_send" />
+
+        </menu>
+
+    </item>
+</menu>

@@ -1,0 +1,21 @@
+name: self affirmative promises:
+isDialogue: false:
+level: C1:
+icon: hourglass:
+topic: future perfect, future continuous and reassurance:
+note: A promise to yourself may strengthen your heart:
+keywords: laugh, peace, twirling, thoughts, breathe:
+raw:
+By the next time I'm angry, I'll have learnt to find peace.
+By the next time I'm blue, I'll have learnt to find hope.
+When I laugh, I'll be laughing with all my heart.
+When I cry, I'll be crying in all honesty.
+When I breathe, I'll be tasting the sweet promise of life.
+Whenever I am caught up in the twirling of stressful thoughts I'll be noticing that there's nothing wrong in being prepared.
+I'll be offering a kind smile whenever I truly feel like it.
+I'll be honest to myself and to those around me.:
+
+
+
+
+

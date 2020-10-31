@@ -1,0 +1,16 @@
+name: reasonable reassurance:
+isDialogue: false:
+level: B2:
+icon: rowing:
+topic: degrees of certainty and self reassurance:
+note: Trust yourself!:
+keywords: sure, likely, bound to, definitely succeed, gain, promise:
+raw:
+I'm sure that if I try my best I'm likely to succeed.
+However, I don't doubt there might be some trouble on the way
+Things may not turn out as expected, then I'm likely to find that
+I'll definitely have a lot to gain from the experience.
+I'll surely learn many things on the way.
+I'm bound to get there, eventually.
+There's no doubt the sun will rise again in the morning.
+Stress is unlikely to be invited to my party.:

@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Affirmative</string>
+
+    <string name="placeholder_string_for_frags">There\'s nothing here yet</string>
+    <string name="placeholder_content_description_image">Some Image</string>
+
+    <string name="dialog_button_ok">OK</string>
+    <string name="dialog_button_more">MORE</string>
+
+    <string name="nav_view_title">Affirmative</string>
+    <string name="nav_view_subtitle">Learn English. Love yourself</string>
+    <string name="nav_view_menu_title_01">Navigation</string>
+    <string name="nav_view_menu_title_02">Communication</string>
+    <string name="nav_view_menu_about">About</string>
+    <string name="nav_view_menu_share">Share</string>
+    <string name="nav_view_menu_send">Send</string>
+    <string name="nav_drawer_open">Drawer open</string>
+    <string name="nav_drawer_closed">Drawer closed</string>
+    <string name="nav_view_menu_rate">Rate</string>
+    <string name="nav_view_menu_privacy">Privacy</string>
+    <string name="nav_view_menu_feats">Achievements</string>
+    <string name="nav_view_menu_settings">Settings</string>
+
+
+    <string name="frag_reader_show_char_single_placeholder">A</string>
+    <string name="frag_reader_show_char_double_placeholder">AA</string>
+    <string name="frag_reader_show_char_full_placeholder">AAA</string>
+    <string name="frag_reader_read_button">Read</string>
+    <string name="frag_reader_snip_counter">%1$d / %2$d</string>
+
+    <string name="text_asset_starter">starter</string>
+    <string name="text_asset_intermediate">intermediate</string>
+    <string name="text_asset_upper_intermediate">upper</string>
+    <string name="text_asset_advanced">advanced</string>
+    <string name="text_asset_literary">literary</string>
+    <string name="frag_title_choose_instruction">Please, choose the level you\'d like to practice.</string>
+    <string name="dialog_level_basic_info">&lt;u>%1$s&lt;/u> is a CEFR descriptor. It means the collection contains sentences appropriate to &lt;u>%2$s&lt;/u>  English learners.</string>
+
+
+</resources>

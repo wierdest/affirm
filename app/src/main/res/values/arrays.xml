@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="text_assets">
+        <item>@string/text_asset_starter</item>
+        <item>@string/text_asset_intermediate</item>
+        <item>@string/text_asset_upper_intermediate</item>
+        <item>@string/text_asset_advanced</item>
+        <item>@string/text_asset_literary</item>
+    </string-array>
+</resources>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myViewModel"
+            type="me.wierdest.affirmative.database.MyViewModel" />
+        <variable
+            name="snippet"
+            type="me.wierdest.affirmative.database.SnippetWithSnips"/>
+        <variable
+            name="snip"
+            type="me.wierdest.affirmative.database.Snip" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/readerLayout"
+        android:background="@color/colorPrimary">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/readerSnipCounter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="0 / 10" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/readerShowFullFab"
+            app:icon="@drawable/visibility_24px"
+            android:text="@string/frag_reader_show_char_full_placeholder"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
+            android:tag="full"
+            tools:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/readerShowDoubleFab"
+            app:layout_constraintTop_toBottomOf="@id/readerSnipCounter" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/readerShowDoubleFab"
+            app:icon="@drawable/visibility_24px"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:tag="double"
+            android:text="@string/frag_reader_show_char_double_placeholder"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@id/readerShowFullFab"
+            app:layout_constraintEnd_toStartOf="@id/readerShowSingleFab"
+            app:layout_constraintTop_toBottomOf="@id/readerSnipCounter" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/readerShowSingleFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:tag="single"
+            android:text="@string/frag_reader_show_char_single_placeholder"
+            android:visibility="invisible"
+            app:icon="@drawable/visibility_24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/readerShowDoubleFab"
+            app:layout_constraintTop_toBottomOf="@id/readerSnipCounter"
+            tools:visibility="visible" />
+
+        <me.wierdest.affirmative.utilities.RedMaxProgressBar
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/readerNegBonusProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/readerShowFullFab"/>
+
+<!--        <androidx.core.widget.NestedScrollView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:maxHeight="200dp"-->
+<!--            android:id="@+id/readerTextScrollView"-->
+<!--            android:layout_margin="16dp"-->
+<!--            android:rotationY="-2"-->
+<!--            android:rotationX="10"-->
+<!--            android:translationZ="10dp"-->
+<!--            app:layout_constraintVertical_bias="0.0"-->
+<!--            android:background="@color/colorPrimaryDark"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/readerNegBonusProgressBar"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/controlLayout">-->
+
+<!--            <TextSwitcher-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="32dp"-->
+<!--                android:id="@+id/readerTextSwitcher" />-->
+
+<!--        </androidx.core.widget.NestedScrollView>-->
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/controlLayout"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@id/readerNegBonusProgressBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutDescription="@xml/reader_scene">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/readerTextScrollView"
+                android:rotationY="-2"
+                android:rotationX="10"
+                android:translationZ="10dp"
+                app:layout_constraintVertical_bias="0.2"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/readerSnipImage">
+
+                <TextSwitcher
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/readerTextSwitcher" />
+
+            </androidx.core.widget.NestedScrollView>
+
+            <ImageView
+                android:id="@+id/readerSnipImage"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:rotationY="-5"
+                android:rotationX="10"
+                android:translationZ="10dp"
+                app:srcCompat="@drawable/public_24px"
+                app:tint="@color/colorAccent"
+                app:layout_constraintBottom_toTopOf="@id/readProgressBar"/>
+
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/readProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:visibility="visible"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/readOutLoudFab"
+                app:layout_constraintStart_toStartOf="@id/readPreviousFab"
+                app:layout_constraintEnd_toEndOf="@id/readNextFab"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/readPreviousFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:fabSize="mini"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:visibility="visible"
+                tools:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@id/readOutLoudFab"
+                app:srcCompat="@drawable/skip_previous_24px" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/readOutLoudFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/readPreviousFab"
+                app:layout_constraintEnd_toStartOf="@id/readNextFab"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:visibility="visible"
+                tools:visibility="visible"
+                app:srcCompat="@drawable/mic_24px" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/readNextFab"
+                app:fabSize="mini"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/readOutLoudFab"
+                app:srcCompat="@drawable/skip_next_24px"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="visible"
+                tools:visibility="visible"
+                android:layout_marginBottom="16dp"/>
+
+
+
+
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/readerSnipImage"-->
+<!--            android:layout_width="180dp"-->
+<!--            android:layout_height="180dp"-->
+<!--            android:background="@color/colorPrimaryDark"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            app:srcCompat="@drawable/public_24px"-->
+<!--            app:tint="@color/colorAccent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/readerTextScrollView"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/readProgressBar"/>-->
+
+<!--        <ProgressBar-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/readProgressBar"-->
+<!--            style="?android:attr/progressBarStyleHorizontal"-->
+<!--            android:visibility="visible"-->
+<!--            tools:visibility="visible"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/readOutLoudFab"-->
+<!--            app:layout_constraintStart_toStartOf="@id/readPreviousFab"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/readNextFab"/>-->
+
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/readPreviousFab"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            app:fabSize="mini"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintHorizontal_chainStyle="spread"-->
+<!--            android:visibility="visible"-->
+<!--            tools:visibility="visible"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/readOutLoudFab"-->
+<!--            app:srcCompat="@drawable/skip_previous_24px" />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/readOutLoudFab"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/readPreviousFab"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/readNextFab"-->
+<!--            app:layout_constraintHorizontal_chainStyle="spread"-->
+<!--            android:visibility="visible"-->
+<!--            tools:visibility="visible"-->
+<!--            app:srcCompat="@drawable/mic_24px" />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/readNextFab"-->
+<!--            app:fabSize="mini"-->
+<!--            app:layout_constraintHorizontal_chainStyle="spread"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/readOutLoudFab"-->
+<!--            app:srcCompat="@drawable/skip_next_24px"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:visibility="visible"-->
+<!--            tools:visibility="visible"-->
+<!--            android:layout_marginBottom="16dp"/>-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
